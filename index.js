@@ -1,4 +1,4 @@
-const url = require('url')
+/*const url = require('url')
 const http = require('http')
 const fs = require('fs')
 
@@ -28,4 +28,14 @@ http
       return res.end()
     })
   })
-  .listen(8080)
+  .listen(8080)*/
+
+const express = require('express')
+const app = express()
+
+app.get('/', (req, res) => res.send('Index'))
+app.get('/about', (req, res) => res.send('About'))
+app.get('/contact-me', (req, res) => res.send('Contact Me'))
+app.get('/404', (req, res) => res.send('404'))
+
+app.listen(8080)
